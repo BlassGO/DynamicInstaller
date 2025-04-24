@@ -10,7 +10,7 @@ Two branches separate two distinct variants of DI:
 
 - **Main**: Contains shared files common to both variants
 
-- **Standar**:
+- **Standard**:
   
   Optimized for lightweight ZIPs (up to **3.5GB**, using ``unzip``).
 - **Z-Variant**
