@@ -3021,12 +3021,12 @@ xml_kit() {
                gsub(/^[[:space:]]+|[[:space:]]+$/, "", tag)
                open_regex[num_open] = "<" tag "([[:space:]]+[^>]+)?[[:space:]]*"
             } else {
-               if (match(open_pat, /^\S+/)) {
+               if (match(open_pat, /^[^[:space:]]+/)) {
                   tag = substr(open_pat, RSTART, RLENGTH)
                   open_regex[num_open] = "<" tag "([[:space:]]+[^>]+|[[:space:]]*\n[[:space:]]*[[:alnum:]][^>]+)?[[:space:]]*"
                   attr_str = substr(open_pat, RSTART + RLENGTH)
                   attr_count[num_open] = 0
-                  while (match(attr_str, /[[:space:]]*\n?[[:space:]]*\S+=?/)) {
+                  while (match(attr_str, /[[:space:]]*\n?[[:space:]]*[^[:space:]]+=?/)) {
                      attr = substr(attr_str, RSTART + 1, RLENGTH - 1)
                      gsub(/^\n?[[:space:]]+|\n?[[:space:]]+$/, "", attr)
                      attr_str = substr(attr_str, RSTART + RLENGTH)
@@ -3616,7 +3616,7 @@ dynamic_apktool() {
                   echo " L: Decompiling $dex..."
                   if ! run_jar "$bk" d "$tmp/dex.tmp" "${bc[@]}" -o "$result"; then echo "${n} ERROR: Cant decode: \"$dex\" with \"$bk\"" && return 1; fi
                fi
-            done < <(find_content -r "^classes\S*\.dex$" "$file" | sort)
+            done < <(find_content -r "^classes[^[:space:]]*\.dex$" "$file" | sort)
          fi
          if [ -z "$noextra" ]; then
             echo " L: Saving extras..."
