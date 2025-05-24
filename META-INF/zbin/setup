@@ -129,6 +129,7 @@ if [ -f core -a -f static ]; then
       export apex_mount=on
       echo " >> Recovery Mode 1.2.0 "
    }
+   export framework_res="/system/framework/framework-res.apk" apktool_aapt=off
 
    echo " @BlassGO "
    echo " "
