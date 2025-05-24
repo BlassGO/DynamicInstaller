@@ -13,6 +13,7 @@ setdefault   devices_alert        on
 setdefault   dalvik_memory        800M
 setdefault   extraction_speed     4M
 setdefault   off_readonly         ""
+setdefault   framework_res        "/system/framework/framework-res.apk"
 setdefault   permissions          "0:0:0755:0644"
 #-----------------------------------------------#
 #Your script starts here:
