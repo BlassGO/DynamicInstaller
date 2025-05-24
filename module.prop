@@ -1,0 +1,7 @@
+id=test-module
+name=Test Module
+version=v1.0
+versionCode=1
+author=random
+description=Module info for Magisk v28+ or KSU
+support=none
