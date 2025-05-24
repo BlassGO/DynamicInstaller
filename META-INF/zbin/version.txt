@@ -1,4 +1,4 @@
 Project:  Dynamic Installer
 Docs:     https://blassgo.github.io/DynamicInstaller_Doc
-Version:  Stable - 5.4-b3Z
+Version:  Stable - 5.5-Z
 Author:   @BlassGO
